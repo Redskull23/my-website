@@ -1,5 +1,576 @@
-<!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>My site</title></head>
-  <body><h1>Hello from GitHub Pages</h1></body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrew Pepper | Portfolio</title>
+  <meta name="description" content="AI governance, data platforms, technical product leadership. Projects, demos, and case studies." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#101a2d;
+      --panel2:#0f172a;
+      --text:#e6edf3;
+      --muted:#a9b4c0;
+      --line:rgba(255,255,255,.08);
+      --accent:#38bdf8;
+      --accent2:#22c55e;
+      --warn:#f59e0b;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --radius:14px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(56,189,248,.15), transparent 55%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(34,197,94,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 70px; }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0 0;
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .brand h1{ margin:0; font-size:22px; letter-spacing:.2px; }
+    .brand .sub{ color:var(--muted); font-size:13px; }
+    .nav{
+      display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .nav a{
+      color:var(--text);
+      opacity:.9;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .nav a:hover{ opacity:1; text-decoration:none; border-color:rgba(56,189,248,.35) }
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:26px 18px;
+      display:grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap:18px;
+    }
+    @media (max-width: 860px){ .hero{ grid-template-columns:1fr } }
+    .hero h2{ margin:0 0 8px; font-size:28px; }
+    .hero p{ margin:0 0 12px; color:var(--muted); max-width: 70ch; }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px }
+    .pill{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .cta{
+      display:flex; flex-direction:column; gap:10px;
+      align-items:stretch;
+      justify-content:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      padding:10px 12px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: rgba(56,189,248,.16);
+      border-color: rgba(56,189,248,.35);
+    }
+    .btn.success{
+      background: rgba(34,197,94,.14);
+      border-color: rgba(34,197,94,.30);
+    }
+    .btn:hover{ filter:brightness(1.08); text-decoration:none }
+    section{ margin-top:26px; }
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin:0 0 10px;
+    }
+    .sectionTitle h3{ margin:0; font-size:18px; }
+    .sectionTitle .hint{ color:var(--muted); font-size:12px; }
+    .panel{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: 14px;
+      padding:14px;
+      display:flex; flex-direction:column; gap:10px;
+      min-height: 215px;
+    }
+    .card h4{ margin:0; font-size:16px; }
+    .card p{ margin:0; color:var(--muted); font-size:13px; }
+    .tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:2px; }
+    .tag{
+      font-size:11px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      opacity:.95;
+    }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; }
+    .small{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius: 10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .small:hover{ filter:brightness(1.1); text-decoration:none }
+    .small.demo{ border-color: rgba(34,197,94,.35); background: rgba(34,197,94,.10); }
+    .small.case{ border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.10); }
+    .filters{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top:10px;
+    }
+    .filters input{
+      flex:1;
+      min-width: 220px;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline: none;
+    }
+    .filters .chip{
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+      font-size:12px;
+      user-select:none;
+    }
+    .filters .chip.active{
+      border-color: rgba(56,189,248,.45);
+      background: rgba(56,189,248,.16);
+    }
+
+    /* Modal */
+    .modalOverlay{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.65);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index: 50;
+    }
+    .modal{
+      width:min(920px, 100%);
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,45,.95), rgba(11,18,32,.95));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .modalHeader{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .modalHeader strong{ font-size:14px }
+    .closeBtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border-radius: 10px;
+      padding:8px 10px;
+      cursor:pointer;
+    }
+    .modalBody{ padding:14px; }
+    .embed{
+      width:100%;
+      aspect-ratio: 16/9;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      overflow:hidden;
+      background: rgba(0,0,0,.25);
+    }
+    .embed iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+    .note{ color:var(--muted); font-size:12px; margin-top:8px }
+    footer{
+      margin-top:28px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <h1>Andrew Pepper</h1>
+        <div class="sub">AI governance and data platform product leader</div>
+      </div>
+      <div class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#demos">Demos</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div>
+        <h2>Portfolio for hiring managers</h2>
+        <p>
+          I build systems that make AI safer, explainable, and operational at scale.
+          This page highlights shipped work, case studies, and interactive demos.
+        </p>
+        <div class="pillrow">
+          <span class="pill">AI governance</span>
+          <span class="pill">LLM evaluation</span>
+          <span class="pill">data platforms</span>
+          <span class="pill">knowledge graphs</span>
+          <span class="pill">observability</span>
+          <span class="pill">zero trust</span>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View project gallery</a>
+        <a class="btn success" href="#contact">Contact</a>
+        <a class="btn" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub profile</a>
+        <a class="btn" href="https://www.linkedin.com/in/andrewpepper1" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="sectionTitle">
+        <h3>Project gallery</h3>
+        <div class="hint">Filter by tag or search. Add links to demos as you publish them.</div>
+      </div>
+
+      <div class="panel">
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search projects (name, description, tags)..." />
+          <div class="chip active" data-tag="all">All</div>
+          <div class="chip" data-tag="ai-governance">AI governance</div>
+          <div class="chip" data-tag="data-platform">Data platform</div>
+          <div class="chip" data-tag="knowledge-graph">Knowledge graph</div>
+          <div class="chip" data-tag="demo">Demo ready</div>
+        </div>
+
+        <div class="grid" id="cards" style="margin-top:14px;">
+          <!-- CARD 1 -->
+          <article class="card" data-tags="ai-governance,data-platform,demo">
+            <h4>Sentinel (AI governance platform)</h4>
+            <p>
+              Governance automation for LLM and ML systems. Eval workflows, policy checks, risk and compliance controls.
+            </p>
+            <div class="tags">
+              <span class="tag">ai-governance</span>
+              <span class="tag">data-platform</span>
+              <span class="tag">demo</span>
+            </div>
+            <div class="actions">
+              <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">Repo</a>
+              <button class="small case" data-open="case-sentinel">Case study</button>
+              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Sentinel demo video">Watch demo</button>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="card" data-tags="data-platform,demo">
+            <h4>Helios (manufacturing visibility)</h4>
+            <p>
+              Real-time material and work order readiness. Shortage detection, traceability, and operational insights.
+            </p>
+            <div class="tags">
+              <span class="tag">data-platform</span>
+              <span class="tag">demo</span>
+            </div>
+            <div class="actions">
+              <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">Repo</a>
+              <button class="small case" data-open="case-helios">Case study</button>
+              <a class="small demo" href="#" target="_blank" rel="noopener">Live demo</a>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="card" data-tags="knowledge-graph,ai-governance">
+            <h4>Syntropy (concept enrichment)</h4>
+            <p>
+              Metadata enrichment with LLM reasoning plus graph and vector patterns for discoverability and governance.
+            </p>
+            <div class="tags">
+              <span class="tag">knowledge-graph</span>
+              <span class="tag">ai-governance</span>
+            </div>
+            <div class="actions">
+              <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">Repo</a>
+              <button class="small case" data-open="case-syntropy">Case study</button>
+              <a class="small demo" href="#" target="_blank" rel="noopener">Live demo</a>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article class="card" data-tags="ai-governance,knowledge-graph">
+            <h4>Parallax Test (research)</h4>
+            <p>
+              Framework to measure human trust calibration with AI systems. Evaluates anthropomorphism and influence.
+            </p>
+            <div class="tags">
+              <span class="tag">ai-governance</span>
+              <span class="tag">knowledge-graph</span>
+            </div>
+            <div class="actions">
+              <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">Repo</a>
+              <button class="small case" data-open="case-parallax">Case study</button>
+              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Parallax overview">Watch</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          Replace the placeholder YouTube embed (currently a placeholder) and add real “Live demo” links when you host them.
+        </div>
+      </div>
+    </section>
+
+    <section id="demos">
+      <div class="sectionTitle">
+        <h3>Interactive demos</h3>
+        <div class="hint">Best hosts: Streamlit Community Cloud, Hugging Face Spaces, Render, Vercel.</div>
+      </div>
+
+      <div class="panel">
+        <p style="margin:0; color:var(--muted); font-size:13px;">
+          Put your real demo links here. Once you have them, also connect each project card’s “Live demo” button to the same URL.
+        </p>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="small demo" href="#" target="_blank" rel="noopener">Sentinel live demo</a>
+          <a class="small demo" href="#" target="_blank" rel="noopener">Helios live demo</a>
+          <a class="small demo" href="#" target="_blank" rel="noopener">Syntropy live demo</a>
+        </div>
+
+        <div class="note">
+          If your demo host supports embedding, you can use the “Watch demo” button on a card to open an embedded iframe.
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="sectionTitle">
+        <h3>Resume</h3>
+        <div class="hint">Add a PDF to this repo and link it here.</div>
+      </div>
+      <div class="panel">
+        <p style="margin:0 0 10px; color:var(--muted); font-size:13px;">
+          Add a file named <strong>Andrew_Pepper_Resume.pdf</strong> to the repository root and this button will work.
+        </p>
+        <a class="btn primary" href="Andrew_Pepper_Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sectionTitle">
+        <h3>Contact</h3>
+        <div class="hint">Fast ways to reach me</div>
+      </div>
+      <div class="panel">
+        <p style="margin:0 0 10px; color:var(--muted); font-size:13px;">
+          Recruiters and hiring managers: email is best. LinkedIn also works.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="small" href="mailto:pepper_andrew@yahoo.com">pepper_andrew@yahoo.com</a>
+          <a class="small" href="https://www.linkedin.com/in/andrewpepper1" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Andrew Pepper</div>
+      <div>Built on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modalOverlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Demo modal">
+    <div class="modal">
+      <div class="modalHeader">
+        <strong id="modalTitle">Demo</strong>
+        <button class="closeBtn" id="closeModal">Close</button>
+      </div>
+      <div class="modalBody">
+        <div class="embed">
+          <iframe id="modalFrame" src="" title="Embedded demo" allowfullscreen></iframe>
+        </div>
+        <div class="note" id="modalNote">
+          If this embed does not load, the host may block iframes. Use a direct link instead.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDY CONTENT (simple, replace text as you want) -->
+  <template id="case-sentinel">
+    <h4>Sentinel case study</h4>
+    <p>Problem: enterprise teams ship AI features without consistent evaluation, controls, and auditability.</p>
+    <p>Approach: define evaluation dimensions, instrument pipelines, enforce policy gates, and provide evidence trails.</p>
+    <p>Outcome: faster approvals, fewer regressions, clearer risk posture, and scalable governance operations.</p>
+  </template>
+
+  <template id="case-helios">
+    <h4>Helios case study</h4>
+    <p>Problem: production teams lack real-time visibility into kit readiness, shortages, and traceability.</p>
+    <p>Approach: unify events and master data, create readiness metrics, and deliver operational dashboards and alerts.</p>
+    <p>Outcome: improved OTIF, reduced shortages, better compliance evidence, and faster decision loops.</p>
+  </template>
+
+  <template id="case-syntropy">
+    <h4>Syntropy case study</h4>
+    <p>Problem: metadata is incomplete, inconsistent, and hard for humans and AI systems to use safely.</p>
+    <p>Approach: enrich definitions, relationships, and tags using LLM reasoning plus graph and vector patterns.</p>
+    <p>Outcome: improved search, better governance controls, and cleaner downstream AI context.</p>
+  </template>
+
+  <template id="case-parallax">
+    <h4>Parallax Test case study</h4>
+    <p>Problem: people over-trust or under-trust AI, especially when the system sounds confident.</p>
+    <p>Approach: test explanations, confidence styles, and anthropomorphic cues against decision accuracy and trust calibration.</p>
+    <p>Outcome: practical guidance for safer UX patterns and better human oversight.</p>
+  </template>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Filter logic
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const cards = Array.from(document.querySelectorAll("#cards .card"));
+    const search = document.getElementById("search");
+    let activeTag = "all";
+
+    function applyFilters(){
+      const q = (search.value || "").toLowerCase().trim();
+      cards.forEach(card => {
+        const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+        const text = (card.innerText || "").toLowerCase();
+        const matchesTag = (activeTag === "all") || tags.includes(activeTag);
+        const matchesQuery = !q || text.includes(q) || tags.includes(q);
+        card.style.display = (matchesTag && matchesQuery) ? "" : "none";
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        activeTag = chip.getAttribute("data-tag");
+        applyFilters();
+      });
+    });
+
+    search.addEventListener("input", applyFilters);
+
+    // Modal embed logic
+    const overlay = document.getElementById("modalOverlay");
+    const frame = document.getElementById("modalFrame");
+    const title = document.getElementById("modalTitle");
+    const closeBtn = document.getElementById("closeModal");
+
+    function openModal(embedUrl, modalTitle){
+      title.textContent = modalTitle || "Demo";
+      frame.src = embedUrl || "";
+      overlay.style.display = "flex";
+    }
+    function closeModal(){
+      overlay.style.display = "none";
+      frame.src = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => { if(e.target === overlay) closeModal(); });
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeModal(); });
+
+    // Demo buttons open embedded iframe
+    document.querySelectorAll("[data-embed]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const embed = btn.getAttribute("data-embed");
+        const t = btn.getAttribute("data-title") || "Demo";
+        openModal(embed, t);
+      });
+    });
+
+    // Case study buttons show simple modal with HTML content
+    document.querySelectorAll("[data-open]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-open");
+        const tpl = document.getElementById(id);
+        const modalTitle = "Case study";
+        title.textContent = modalTitle;
+
+        // replace iframe with a lightweight HTML view by using srcdoc
+        const html = `
+          <html><head><meta charset="utf-8">
+          <style>
+            body{margin:0;padding:14px;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#e6edf3; background:rgba(0,0,0,.12)}
+            h4{margin:0 0 10px}
+            p{margin:0 0 10px; color:#a9b4c0; line-height:1.45}
+          </style></head><body>
+          ${tpl ? tpl.innerHTML : "<p>Missing case study template.</p>"}
+          </body></html>`;
+        frame.srcdoc = html;
+        overlay.style.display = "flex";
+      });
+    });
+
+    applyFilters();
+  </script>
+</body>
 </html>
