@@ -9,411 +9,422 @@
     content="AI governance, data platforms, technical product leadership. Projects, demos, and case studies."
   />
   <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#101a2d;
-      --panel2:#0f172a;
-      --text:#e6edf3;
-      --muted:#a9b4c0;
-      --line:rgba(255,255,255,.08);
-      --accent:#38bdf8;
-      --accent2:#22c55e;
-      --warn:#f59e0b;
-      --shadow:0 10px 25px rgba(0,0,0,.35);
-      --radius:14px;
-      --max:1080px;
+    :root {
+      --bg: #0b1220;
+      --panel: #101a2d;
+      --panel2: #0f172a;
+      --text: #e6edf3;
+      --muted: #a9b4c0;
+      --line: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --warn: #f59e0b;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      --radius: 14px;
+      --max: 1080px;
     }
 
-    *{box-sizing:border-box}
-
-    html{
-      scroll-behavior:smooth;
+    * {
+      box-sizing: border-box;
     }
 
-    body{
-      margin:0;
-      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(1200px 600px at 20% 0%, rgba(56,189,248,.15), transparent 55%),
-        radial-gradient(900px 500px at 80% 10%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(1200px 600px at 20% 0%, rgba(56, 189, 248, 0.15), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(34, 197, 94, 0.12), transparent 55%),
         var(--bg);
-      color:var(--text);
-      line-height:1.5;
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    a{
-      color:var(--accent);
-      text-decoration:none;
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    a:hover{
-      text-decoration:underline;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:28px 18px 70px;
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 70px;
     }
 
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 0 0;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0 0;
     }
 
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .brand h1{
-      margin:0;
-      font-size:22px;
-      letter-spacing:.2px;
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0.2px;
     }
 
-    .brand .sub{
-      color:var(--muted);
-      font-size:13px;
+    .brand .sub {
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .nav{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .nav a{
-      color:var(--text);
-      opacity:.9;
-      padding:8px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.03);
+    .nav a {
+      color: var(--text);
+      opacity: 0.9;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
     }
 
-    .nav a:hover{
-      opacity:1;
-      text-decoration:none;
-      border-color:rgba(56,189,248,.35);
+    .nav a:hover {
+      opacity: 1;
+      text-decoration: none;
+      border-color: rgba(56, 189, 248, 0.35);
     }
 
-    .hero{
-      margin-top:18px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:26px 18px;
-      display:grid;
-      grid-template-columns:1.4fr .6fr;
-      gap:18px;
+    .hero {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 18px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 18px;
     }
 
-    @media (max-width:860px){
-      .hero{ grid-template-columns:1fr; }
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .hero h2{
-      margin:0 0 8px;
-      font-size:28px;
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: 28px;
     }
 
-    .hero p{
-      margin:0 0 12px;
-      color:var(--muted);
-      max-width:70ch;
+    .hero p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      max-width: 70ch;
     }
 
-    .pillrow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:10px;
+    .pillrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
-    .pill{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:12px;
-      white-space:nowrap;
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-size: 12px;
+      white-space: nowrap;
     }
 
-    .cta{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      align-items:stretch;
-      justify-content:center;
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+      justify-content: center;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      padding:10px 12px;
-      font-weight:600;
-      cursor:pointer;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      padding: 10px 12px;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .btn.primary{
-      background:rgba(56,189,248,.16);
-      border-color:rgba(56,189,248,.35);
+    .btn.primary {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: rgba(56, 189, 248, 0.35);
     }
 
-    .btn.success{
-      background:rgba(34,197,94,.14);
-      border-color:rgba(34,197,94,.30);
+    .btn.success {
+      background: rgba(34, 197, 94, 0.14);
+      border-color: rgba(34, 197, 94, 0.3);
     }
 
-    .btn:hover{
-      filter:brightness(1.08);
-      text-decoration:none;
+    .btn:hover {
+      filter: brightness(1.08);
+      text-decoration: none;
     }
 
-    section{
-      margin-top:26px;
+    section {
+      margin-top: 26px;
     }
 
-    .sectionTitle{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      margin:0 0 10px;
+    .sectionTitle {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 10px;
     }
 
-    .sectionTitle h3{
-      margin:0;
-      font-size:18px;
+    .sectionTitle h3 {
+      margin: 0;
+      font-size: 18px;
     }
 
-    .sectionTitle .hint{
-      color:var(--muted);
-      font-size:12px;
+    .sectionTitle .hint {
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .panel{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:16px;
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
 
-    @media (max-width:980px){
-      .grid{ grid-template-columns:repeat(2, 1fr); }
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width:640px){
-      .grid{ grid-template-columns:1fr; }
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius:14px;
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      min-height:215px;
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 230px;
     }
 
-    .card h4{
-      margin:0;
-      font-size:16px;
+    .card h4 {
+      margin: 0;
+      font-size: 16px;
     }
 
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:7px;
-      margin-top:2px;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 2px;
     }
 
-    .tag{
-      font-size:11px;
-      padding:4px 8px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      opacity:.95;
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      opacity: 0.95;
     }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:auto;
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
     }
 
-    .small{
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+    .small {
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .small:hover{
-      filter:brightness(1.1);
-      text-decoration:none;
+    .small:hover {
+      filter: brightness(1.1);
+      text-decoration: none;
     }
 
-    .small.demo{
-      border-color:rgba(34,197,94,.35);
-      background:rgba(34,197,94,.10);
+    .small.demo {
+      border-color: rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.1);
     }
 
-    .small.case{
-      border-color:rgba(245,158,11,.35);
-      background:rgba(245,158,11,.10);
+    .small.case {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.1);
     }
 
-    .filters{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:10px;
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    .filters input{
-      flex:1;
-      min-width:220px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.18);
-      color:var(--text);
-      outline:none;
+    .filters input {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.18);
+      color: var(--text);
+      outline: none;
     }
 
-    .filters .chip{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      cursor:pointer;
-      font-size:12px;
-      user-select:none;
+    .filters .chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 12px;
+      user-select: none;
     }
 
-    .filters .chip.active{
-      border-color:rgba(56,189,248,.45);
-      background:rgba(56,189,248,.16);
+    .filters .chip.active {
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(56, 189, 248, 0.16);
     }
 
-    .modalOverlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.65);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:50;
+    .modalOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 50;
     }
 
-    .modal{
-      width:min(920px, 100%);
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(16,26,45,.95), rgba(11,18,32,.95));
-      box-shadow:var(--shadow);
-      overflow:hidden;
+    .modal {
+      width: min(920px, 100%);
+      max-height: 90vh;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16, 26, 45, 0.95), rgba(11, 18, 32, 0.95));
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .modalHeader{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 14px;
-      border-bottom:1px solid var(--line);
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .modalHeader strong{
-      font-size:14px;
+    .modalHeader strong {
+      font-size: 14px;
     }
 
-    .closeBtn{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      border-radius:10px;
-      padding:8px 10px;
-      cursor:pointer;
+    .closeBtn {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
     }
 
-    .modalBody{
-      padding:14px;
+    .modalBody {
+      padding: 14px;
+      overflow: auto;
+      max-height: calc(90vh - 58px);
     }
 
-    .embed{
-      width:100%;
-      aspect-ratio:16/9;
-      border:1px solid var(--line);
-      border-radius:14px;
-      overflow:hidden;
-      background:rgba(0,0,0,.25);
+    .embed {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.25);
     }
 
-    .embed iframe{
-      width:100%;
-      height:100%;
-      border:0;
-      background:transparent;
+    .embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: transparent;
     }
 
-    .note{
-      color:var(--muted);
-      font-size:12px;
-      margin-top:8px;
+    .note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
     }
 
-    footer{
-      margin-top:28px;
-      padding-top:16px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:12px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
     }
   </style>
 </head>
@@ -424,17 +435,17 @@
         <h1>Andrew Pepper</h1>
         <div class="sub">AI governance and data platform product leader</div>
       </div>
-      <div class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#demos">Demos</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
     </div>
 
-    <div class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div>
-        <h2>Portfolio for hiring managers</h2>
+        <h2 id="hero-title">Portfolio for hiring managers</h2>
         <p>
           I build systems that make AI safer, explainable, and operational at scale.
           This page highlights shipped work, case studies, and interactive demos.
@@ -454,25 +465,25 @@
         <a class="btn" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub profile</a>
         <a class="btn" href="https://www.linkedin.com/in/andrewpepper1" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-    </div>
+    </section>
 
     <section id="projects">
       <div class="sectionTitle">
         <h3>Project gallery</h3>
-        <div class="hint">Filter by tag or search. Add links to demos as you publish them.</div>
+        <div class="hint">Filter by tag or search. Update links as you publish demos.</div>
       </div>
 
       <div class="panel">
         <div class="filters">
           <input id="search" type="search" placeholder="Search projects (name, description, tags)..." />
-          <div class="chip active" data-tag="all">All</div>
-          <div class="chip" data-tag="ai-governance">AI governance</div>
-          <div class="chip" data-tag="data-platform">Data platform</div>
-          <div class="chip" data-tag="knowledge-graph">Knowledge graph</div>
-          <div class="chip" data-tag="demo">Demo ready</div>
+          <button type="button" class="chip active" data-tag="all">All</button>
+          <button type="button" class="chip" data-tag="ai-governance">AI governance</button>
+          <button type="button" class="chip" data-tag="data-platform">Data platform</button>
+          <button type="button" class="chip" data-tag="knowledge-graph">Knowledge graph</button>
+          <button type="button" class="chip" data-tag="demo">Demo ready</button>
         </div>
 
-        <div class="grid" id="cards" style="margin-top:14px;">
+        <div class="grid" id="cards" style="margin-top: 14px;">
           <article class="card" data-tags="ai-governance data-platform demo compliance assurance sandbox">
             <h4>Artificial Intelligence Governance Scorecard</h4>
             <p>
@@ -487,8 +498,15 @@
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/ai-governance-scorecard" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="ai-gov-score-case">Case study</button>
-              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="AI Governance Scorecard demo">Watch demo</button>
+              <button type="button" class="small case" data-open="ai-gov-score-case">Case study</button>
+              <button
+                type="button"
+                class="small demo"
+                data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                data-title="AI Governance Scorecard demo"
+              >
+                Watch demo
+              </button>
             </div>
           </article>
 
@@ -505,8 +523,15 @@
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/greenline-demo" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="greenline-case">Case study</button>
-              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Greenline demo">Watch demo</button>
+              <button type="button" class="small case" data-open="greenline-case">Case study</button>
+              <button
+                type="button"
+                class="small demo"
+                data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                data-title="Greenline demo"
+              >
+                Watch demo
+              </button>
             </div>
           </article>
 
@@ -522,8 +547,8 @@
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/base-zero-public-demo" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="case-base-zero">Case study</button>
-              <a class="small demo" href="#" target="_blank" rel="noopener">Live demo</a>
+              <button type="button" class="small case" data-open="case-base-zero">Case study</button>
+              <a class="small demo" href="https://github.com/Redskull23/base-zero-public-demo" target="_blank" rel="noopener">Live demo</a>
             </div>
           </article>
 
@@ -539,8 +564,8 @@
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/ai-governance-evaluator" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="case-ai-governance-evaluator">Case study</button>
-              <a class="small demo" href="#" target="_blank" rel="noopener">Live demo</a>
+              <button type="button" class="small case" data-open="case-ai-governance-evaluator">Case study</button>
+              <a class="small demo" href="https://github.com/Redskull23/ai-governance-evaluator" target="_blank" rel="noopener">Live demo</a>
             </div>
           </article>
 
@@ -556,14 +581,21 @@
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/semantic-mdm-demo" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="case-semantic">Case study</button>
-              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Semantic MDM demo">Watch demo</button>
+              <button type="button" class="small case" data-open="case-semantic">Case study</button>
+              <button
+                type="button"
+                class="small demo"
+                data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                data-title="Semantic MDM demo"
+              >
+                Watch demo
+              </button>
             </div>
           </article>
         </div>
 
         <div class="note">
-          Demos are placeholders right now and will be updated as live recordings and hosted apps are published.
+          Demos are placeholders right now and should be replaced with live recordings or hosted applications.
         </div>
       </div>
     </section>
@@ -571,21 +603,21 @@
     <section id="demos">
       <div class="sectionTitle">
         <h3>Interactive demos</h3>
-        
+        <div class="hint">Publish hosted apps here as they become available</div>
       </div>
 
       <div class="panel">
-        <p style="margin:0; color:var(--muted); font-size:13px;">
+        <p style="margin: 0; color: var(--muted); font-size: 13px;">
           Hosted demos will be added here as they are published.
         </p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="small demo" href="#" target="_blank" rel="noopener">Sentinel live demo</a>
-          <a class="small demo" href="#" target="_blank" rel="noopener">Helios live demo</a>
-          <a class="small demo" href="#" target="_blank" rel="noopener">Syntropy live demo</a>
+        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a class="small demo" href="https://github.com/Redskull23" target="_blank" rel="noopener">Sentinel live demo</a>
+          <a class="small demo" href="https://github.com/Redskull23" target="_blank" rel="noopener">Helios live demo</a>
+          <a class="small demo" href="https://github.com/Redskull23" target="_blank" rel="noopener">Syntropy live demo</a>
         </div>
 
         <div class="note">
-          If a host supports embedding, the “Watch demo” button can open it directly in the modal.
+          If a host supports embedding, the Watch demo button can open it directly in the modal.
         </div>
       </div>
     </section>
@@ -595,7 +627,7 @@
         <h3>Resume</h3>
       </div>
       <div class="panel">
-        <p style="margin:0 0 10px; color:var(--muted); font-size:13px;">
+        <p style="margin: 0 0 10px; color: var(--muted); font-size: 13px;">
           Click below to open the current resume PDF.
         </p>
         <a class="btn primary" href="Andrew_Pepper_Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
@@ -608,10 +640,10 @@
         <div class="hint">Fast ways to reach me</div>
       </div>
       <div class="panel">
-        <p style="margin:0 0 10px; color:var(--muted); font-size:13px;">
+        <p style="margin: 0 0 10px; color: var(--muted); font-size: 13px;">
           Recruiters and hiring managers: email is best. LinkedIn also works.
         </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
           <a class="small" href="mailto:pepper_andrew@yahoo.com">pepper_andrew@yahoo.com</a>
           <a class="small" href="https://www.linkedin.com/in/andrewpepper1" target="_blank" rel="noopener">LinkedIn</a>
           <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub</a>
@@ -644,7 +676,6 @@
 
   <template id="ai-gov-score-case">
     <h4>AI Governance Scorecard</h4>
-
     <p><b>Problem:</b></p>
     <p>
       Organizations are rapidly adopting AI systems without clear governance frameworks.
@@ -652,7 +683,6 @@
       sensitive data is properly controlled, and whether monitoring and risk management
       practices exist. Governance assessments are often manual, slow, and interview-driven.
     </p>
-
     <p><b>Solution:</b></p>
     <p>
       Developed an AI Governance Scorecard that combines a structured governance
@@ -660,7 +690,6 @@
       maturity across policy oversight, risk management, monitoring, and data governance,
       then produces a maturity score with prioritized remediation recommendations.
     </p>
-
     <p><b>Technical Design:</b></p>
     <p>
       Built with Python and Streamlit using a modular design that separates the interface,
@@ -668,14 +697,12 @@
       database analysis by inspecting schema metadata, table structures, column patterns,
       and audit fields to infer governance signals that feed a weighted scoring model.
     </p>
-
     <p><b>Key Capabilities Demonstrated:</b></p>
     <p>
       AI governance maturity modeling, automated metadata analysis, governance scoring,
       responsible AI framework alignment, and rapid governance diagnostics for enterprise
       or consulting environments.
     </p>
-
     <p><b>Outcomes:</b></p>
     <p>
       The tool provides a repeatable way to quickly assess AI governance maturity and
@@ -687,34 +714,29 @@
 
   <template id="greenline-case">
     <h4>Greenline case study</h4>
-
     <p><b>Problem:</b></p>
     <p>
       Large enterprises face growing pressure to report workforce and sustainability metrics
       across multiple regions, but many struggle with fragmented HR systems, inconsistent
       definitions, weak lineage, and limited forecasting.
     </p>
-
     <p><b>Solution:</b></p>
     <p>
       Greenline simulates a modern enterprise data architecture that links raw HR inputs
       to governance, analytics, and regulatory reporting outputs. It demonstrates lineage,
       global sustainability metrics, scenario modeling, and forecasting.
     </p>
-
     <p><b>Technical Design:</b></p>
     <p>
       The architecture includes multi-region HR data ingestion, structured transformation
       layers, lineage tracking, regional aggregation across APAC, EMEA, LATAM, and North America,
       headcount-weighted metrics, Monte Carlo forecasting, and exportable compliance outputs.
     </p>
-
     <p><b>Key Capabilities Demonstrated:</b></p>
     <p>
       Global sustainability reporting, headcount-weighted aggregation, lineage visualization,
       Monte Carlo forecasting, scenario modeling, and reporting calendar management.
     </p>
-
     <p><b>Outcome:</b></p>
     <p>
       Greenline shows how organizations can move from fragmented HR reporting toward
@@ -725,40 +747,34 @@
 
   <template id="case-base-zero">
     <h4>Base Zero case study</h4>
-
     <p><b>Overview:</b></p>
     <p>
       Base Zero is an experimental prototype exploring a Large Concept Model that focuses
       on identifying and tagging conceptual meaning across structured and unstructured data.
     </p>
-
     <p><b>Problem:</b></p>
     <p>
       Enterprise AI systems often struggle with semantic consistency across departments.
       Common issues include inconsistent terminology, ambiguous business definitions,
       and difficulty aligning structured datasets with unstructured content.
     </p>
-
     <p><b>Solution:</b></p>
     <p>
       Base Zero introduces a concept-centric approach to interpretation. Instead of
       identifying only keywords, it groups related ideas under shared conceptual meaning
       using rule-based concept tagging and taxonomy-driven logic.
     </p>
-
     <p><b>Technical Design:</b></p>
     <p>
       The design includes a hierarchical taxonomy engine, domain-category-object
       classifications, cross-domain semantic relationships, rule-based tagging,
       metadata enrichment, and semantic alignment that supports downstream knowledge graphs.
     </p>
-
     <p><b>Key Capabilities Demonstrated:</b></p>
     <p>
       Rule-based concept tagging, cross-domain semantic alignment, taxonomy-driven metadata
       enrichment, and a foundation for knowledge graphs and vector search.
     </p>
-
     <p><b>Outcome:</b></p>
     <p>
       Base Zero demonstrates early architecture for a Large Concept Model that could improve
@@ -768,26 +784,22 @@
 
   <template id="case-ai-governance-evaluator">
     <h4>AI Governance Evaluator case study</h4>
-
     <p><b>Overview:</b></p>
     <p>
       The AI Governance Evaluator is a framework for assessing LLM outputs using
       governance-oriented criteria such as safety, bias, relevance, and quality.
     </p>
-
     <p><b>Problem:</b></p>
     <p>
       Organizations deploying LLMs face governance risks including hallucinations,
       biased outputs, unsafe responses, and inconsistent quality, but often lack a
       systematic evaluation framework.
     </p>
-
     <p><b>Solution:</b></p>
     <p>
       The project introduces an evaluation pipeline that scores outputs across
       multiple governance dimensions to support responsible deployment and oversight.
     </p>
-
     <p><b>Technical Design:</b></p>
     <p>
       The system includes evaluation dimensions for relevance, factual accuracy,
@@ -795,13 +807,11 @@
       instruction adherence, and tone appropriateness. Scores are normalized and
       surfaced through a governance-oriented evaluation flow.
     </p>
-
     <p><b>Key Capabilities Demonstrated:</b></p>
     <p>
       Automated LLM evaluation pipelines, governance scoring frameworks, bias and safety
       detection, and operational AI governance design patterns.
     </p>
-
     <p><b>Outcome:</b></p>
     <p>
       The framework demonstrates how organizations can embed responsible AI evaluation
@@ -811,39 +821,33 @@
 
   <template id="case-semantic">
     <h4>Semantic MDM case study: Cross-Domain Knowledge Alignment</h4>
-
     <p><b>Overview:</b></p>
     <p>
       Semantic MDM demonstrates how vector databases and semantic reasoning can align
       terminology across multiple departments by mapping different vocabularies to shared meaning.
     </p>
-
     <p><b>Problem:</b></p>
     <p>
       Large organizations often use different language across departments such as Legal,
       Finance, and Operations, making enterprise-wide analytics and knowledge discovery difficult.
     </p>
-
     <p><b>Solution:</b></p>
     <p>
       The platform introduces a semantic alignment layer that connects related concepts
       across domains using embeddings and conceptual similarity while allowing each team
       to maintain its own terminology.
     </p>
-
     <p><b>Technical Design:</b></p>
     <p>
       The design includes vector embeddings for terms and definitions, concept clustering,
       a semantic alignment layer, shared conceptual references, cross-domain query support,
       and knowledge graph integration for explainable relationships.
     </p>
-
     <p><b>Key Capabilities Demonstrated:</b></p>
     <p>
       Semantic alignment across departments, vector-based concept discovery, knowledge graph
       construction, and cross-domain interoperability.
     </p>
-
     <p><b>Outcome:</b></p>
     <p>
       Semantic MDM shows how organizations can bridge departmental language differences
@@ -861,6 +865,7 @@
     const frame = document.getElementById("modalFrame");
     const title = document.getElementById("modalTitle");
     const closeBtn = document.getElementById("closeModal");
+    const modalNote = document.getElementById("modalNote");
 
     let activeTag = "all";
 
@@ -869,11 +874,11 @@
 
       cards.forEach((card) => {
         const tags = (card.getAttribute("data-tags") || "").toLowerCase();
-        const text = (card.innerText || "").toLowerCase();
+        const text = (card.textContent || "").toLowerCase();
         const matchesTag = activeTag === "all" || tags.includes(activeTag);
         const matchesQuery = !q || text.includes(q) || tags.includes(q);
 
-        card.style.display = (matchesTag && matchesQuery) ? "" : "none";
+        card.style.display = matchesTag && matchesQuery ? "" : "none";
       });
     }
 
@@ -888,8 +893,10 @@
 
     search.addEventListener("input", applyFilters);
 
-    function openEmbed(embedUrl, modalTitle) {
-      title.textContent = modalTitle || "Demo";
+    function openEmbed(embedUrl, modalTitleText) {
+      title.textContent = modalTitleText || "Demo";
+      modalNote.textContent =
+        "If this embed does not load, the host may block iframes. Use the direct repo or demo link instead.";
       frame.removeAttribute("srcdoc");
       frame.src = embedUrl || "";
       overlay.style.display = "flex";
@@ -899,32 +906,35 @@
       const tpl = document.getElementById(templateId);
 
       title.textContent = "Case study";
+      modalNote.textContent = "Case study content is rendered from the matching HTML template.";
       frame.removeAttribute("src");
 
       frame.srcdoc = `
-        <html>
+        <!DOCTYPE html>
+        <html lang="en">
           <head>
             <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <style>
-              body{
-                margin:0;
-                padding:14px;
-                font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-                color:#e6edf3;
-                background:#0b1220;
-                line-height:1.55;
+              body {
+                margin: 0;
+                padding: 14px;
+                font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+                color: #e6edf3;
+                background: #0b1220;
+                line-height: 1.55;
               }
-              h4{
-                margin:0 0 12px;
-                font-size:20px;
-                color:#e6edf3;
+              h4 {
+                margin: 0 0 12px;
+                font-size: 20px;
+                color: #e6edf3;
               }
-              p{
-                margin:0 0 10px;
-                color:#a9b4c0;
+              p {
+                margin: 0 0 10px;
+                color: #a9b4c0;
               }
-              b{
-                color:#e6edf3;
+              b {
+                color: #e6edf3;
               }
             </style>
           </head>
