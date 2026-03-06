@@ -306,7 +306,24 @@
 
         <div class="grid" id="cards" style="margin-top:14px;">
           <!-- CARD 1 -->
-          <article class="card" data-tags="Compliance, Assurance, Sandbox, demo">
+          <article class="card" data-tags="Compliance, Assurance, Sandbox, AI Governance, demo">
+            <h4>Artifical Intelligence Governance Scorecard</h4>
+            <p>
+              A lightweight AI governance diagnostic and maturity assessment tool designed to evaluate how prepared an organization is to responsibly deploy, manage, and monitor AI systems.
+            </p>
+            <div class="tags">
+              <span class="tag">ai-governance</span>
+              <span class="tag">data-platform</span>
+              <span class="tag">demo</span>
+            </div>
+            <div class="actions">
+              <a class="small" href="https://github.com/Redskull23/ai-governance-scorecard" target="_blank" rel="noopener">Repo</a>
+              <button class="small case" data-open="ai-gov-score-case">Case study</button>
+              <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Sentinel demo video">Watch demo</button>
+            </div>
+          </article>
+ <!-- CARD 1 -->
+          <article class="card" data-tags="Compliance, Assurance, demo">
             <h4>Greenline Demo (HR Sustainability & Lineage Demo)</h4>
             <p>
               Greenline is a portfolio-friendly demo app that showcases:
@@ -383,7 +400,7 @@ Reporting calendar (Gantt) and export to JSON/CSV
         </div>
 
         <div class="note">
-          Replace the placeholder YouTube embed (currently a placeholder) and add real “Live demo” links when you host them.
+          Demos (currently a placeholders) are currently being developed and will be updated soon 
         </div>
       </div>
     </section>
@@ -396,7 +413,7 @@ Reporting calendar (Gantt) and export to JSON/CSV
 
       <div class="panel">
         <p style="margin:0; color:var(--muted); font-size:13px;">
-          Put your real demo links here. Once you have them, also connect each project card’s “Live demo” button to the same URL.
+          TBD.
         </p>
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="small demo" href="#" target="_blank" rel="noopener">Sentinel live demo</a>
@@ -465,6 +482,55 @@ Reporting calendar (Gantt) and export to JSON/CSV
   </div>
 
   <!-- CASE STUDY CONTENT (simple, replace text as you want) -->
+<template id="ai-gov-score-case">
+    <h4>AI Governance Score Card</h4>
+
+    <p><b>Problem:</b></p>
+    <p>
+    Organizations are rapidly adopting AI systems without clear governance frameworks. 
+    Leadership teams often lack visibility into how AI models are managed, whether 
+    sensitive data is properly controlled, or whether monitoring and risk management 
+    practices exist. Governance assessments are typically manual, slow, and dependent 
+    on interviews rather than technical evidence.
+    </p>
+
+    <p><b>Solution:</b></p>
+    <p>
+    Developed an AI Governance Scorecard that combines a structured governance 
+    questionnaire with an automated database evaluator. The tool assesses governance 
+    maturity across key domains including policy oversight, risk management, monitoring, 
+    and data governance. By analyzing both governance responses and metadata signals 
+    from data environments, the system produces a governance maturity score and 
+    prioritized remediation recommendations.
+    </p>
+
+    <p><b>Technical Design:</b></p>
+    <p>
+    The system was built using Python and Streamlit to provide an interactive governance 
+    assessment interface. A modular architecture separates the user interface, scoring 
+    engine, database connectors, and evaluation logic. The evaluator simulates connecting 
+    to a client database and analyzes schema metadata, table structures, column patterns, 
+    and audit fields to infer governance signals. These signals feed into a weighted 
+    scoring engine that calculates domain maturity and generates governance findings.
+    </p>
+
+    <p><b>Key Capabilities Demonstrated:</b></p>
+    <p>
+    AI governance maturity modeling, automated metadata analysis, governance scoring 
+    algorithms, responsible AI framework alignment, and rapid governance diagnostics 
+    suitable for consulting or enterprise governance programs.
+    </p>
+
+    <p><b>Outcomes:</b></p>
+    <p>
+    The tool provides a repeatable method to quickly assess AI governance maturity and 
+    identify governance gaps. It enables organizations to prioritize risk mitigation 
+    efforts, improve governance transparency, and align AI practices with emerging 
+    regulatory frameworks such as NIST AI RMF and ISO 42001. The prototype also serves 
+    as a demonstration platform for responsible AI governance capabilities.
+    </p>
+</template>
+  
   <template id="greenline-case">
     <h4>Greenline case study</h4>
     <p>Problem: Large enterprises increasingly face regulatory pressure to report workforce and sustainability metrics across multiple regions. However, most organizations struggle with:
