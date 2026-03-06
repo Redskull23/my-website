@@ -376,7 +376,7 @@ Reporting calendar (Gantt) and export to JSON/CSV
             </div>
             <div class="actions">
               <a class="small" href="https://github.com/Redskull23/semantic-mdm-demo" target="_blank" rel="noopener">Repo</a>
-              <button class="small case" data-open="case-parallax">Case study</button>
+              <button class="small case" data-open="case-semantic">Case study</button>
               <button class="small demo" data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Parallax overview">Watch</button>
             </div>
           </article>
@@ -465,32 +465,240 @@ Reporting calendar (Gantt) and export to JSON/CSV
   </div>
 
   <!-- CASE STUDY CONTENT (simple, replace text as you want) -->
-  <template id="case-sentinel">
-    <h4>Sentinel case study</h4>
-    <p>Problem: enterprise teams ship AI features without consistent evaluation, controls, and auditability.</p>
-    <p>Approach: define evaluation dimensions, instrument pipelines, enforce policy gates, and provide evidence trails.</p>
-    <p>Outcome: faster approvals, fewer regressions, clearer risk posture, and scalable governance operations.</p>
+  <template id="greenline-case">
+    <h4>Greenline case study</h4>
+    <p>Problem: Large enterprises increasingly face regulatory pressure to report workforce and sustainability metrics across multiple regions. However, most organizations struggle with:
+
+• fragmented HR systems
+• inconsistent reporting definitions
+• lack of traceable data lineage
+• difficulty forecasting sustainability goals
+
+Without visibility into how data moves through systems, sustainability reporting becomes unreliable and difficult to audit.</p>
+    <p>Solution: Greenline simulates a modern enterprise data architecture that links raw HR inputs to governance, analytics, and regulatory reporting outputs.
+
+The platform allows users to:
+
+• trace data lineage from source → platform → analytics
+• analyze headcount-weighted sustainability metrics globally
+• simulate regulatory reporting outputs
+• forecast performance against sustainability targets
+
+The goal is to demonstrate how organizations can build transparent, auditable sustainability reporting pipelines.</p>
+    <p>Technical Design: The architecture demonstrates several core capabilities:
+
+Data pipeline simulation
+
+Multi-region HR data ingestion
+
+Structured transformation layers
+
+lineage tracking across pipeline stages
+
+Analytics engine
+
+regional aggregation across APAC, EMEA, LATAM, and North America
+
+headcount-weighted sustainability metrics
+
+Monte Carlo forecasting for compliance targets
+
+Governance layer
+
+traceable data lineage
+
+reproducible analytics pipelines
+
+exportable compliance outputs (JSON / CSV)</p>
+    <p>Key Capabilities Demonstrated: Global sustainability reporting
+
+Headcount-weighted aggregation
+
+Data lineage visualization
+
+Monte Carlo forecasting for regulatory targets
+
+Scenario modeling sandbox
+
+Reporting calendar management</p>
+    <p>Outcome: Greenline shows how organizations can move from fragmented HR reporting toward auditable, transparent sustainability analytics pipelines.
+
+The platform demonstrates how governance and analytics can be tightly integrated to support regulatory reporting and executive decision-making.</p>
   </template>
 
-  <template id="case-helios">
-    <h4>Helios case study</h4>
-    <p>Problem: production teams lack real-time visibility into kit readiness, shortages, and traceability.</p>
-    <p>Approach: unify events and master data, create readiness metrics, and deliver operational dashboards and alerts.</p>
-    <p>Outcome: improved OTIF, reduced shortages, better compliance evidence, and faster decision loops.</p>
+  <template id="case-base-zero"">
+    <h4>Base Zero case study</h4>
+    <p>Overview: Base Zero is an experimental prototype exploring a new type of semantic reasoning system called a Large Concept Model (LCM). Unlike traditional NLP models that rely primarily on token prediction, the LCM focuses on identifying and tagging conceptual meaning across structured and unstructured data.
+
+The system applies rule-based concept detection to demonstrate how enterprise data can be organized semantically.</p>
+    <p>PMost enterprise AI systems struggle with semantic consistency across large organizations.
+
+Common issues include:
+
+• inconsistent terminology between departments
+• ambiguous definitions of business concepts
+• difficulty aligning structured data with unstructured documents
+
+Traditional machine learning approaches often fail to capture conceptual relationships across domains.</p>
+    <p>Solution: Base Zero introduces a concept-centric approach to data interpretation.
+
+Instead of identifying individual keywords, the system attempts to recognize concept structures, allowing related ideas to be grouped under shared semantic meaning.
+
+The model performs rule-based concept tagging that can later be expanded into machine-learning or vector-based reasoning systems.</p>
+    <p>Technical Design: Concept taxonomy engine
+
+Hierarchical taxonomy structure
+
+Domain → category → object classifications
+
+Cross-domain semantic relationships
+
+Rule-based tagging engine
+
+Pattern detection across structured datasets
+
+Keyword clustering into conceptual categories
+
+Metadata enrichment for downstream AI systems
+
+Semantic alignment layer
+
+Links related concepts across domains
+
+Creates normalized conceptual metadata
+
+Supports downstream knowledge graph construction
+    <p>Key Capabilities Demonstrated: Rule-based concept tagging
+
+Cross-domain semantic alignment
+
+Taxonomy-driven metadata enrichment
+
+Foundation for knowledge graphs and vector search
+    <p>Outcome: Base Zero demonstrates the early architecture for a Large Concept Model that could support enterprise knowledge systems.
+
+The project illustrates how concept-level reasoning can improve metadata consistency, semantic search, and AI governance in large organizations.</p>
   </template>
 
-  <template id="case-syntropy">
-    <h4>Syntropy case study</h4>
-    <p>Problem: metadata is incomplete, inconsistent, and hard for humans and AI systems to use safely.</p>
-    <p>Approach: enrich definitions, relationships, and tags using LLM reasoning plus graph and vector patterns.</p>
-    <p>Outcome: improved search, better governance controls, and cleaner downstream AI context.</p>
+  <template id="case-ai-governance-evaluator">
+    <h4>AI Governance case study</h4>
+    <p>Overview: The AI Governance Evaluator is a framework designed to assess large language model outputs using governance-oriented evaluation criteria. The system demonstrates how organizations can systematically evaluate AI responses for safety, bias, accuracy, and relevance.
+
+The goal is to show how AI governance can be operationalized through automated evaluation pipelines.</p>
+    <p>Problem: Organizations deploying LLMs face significant governance challenges:
+
+• hallucinated responses
+• biased outputs
+• unsafe or policy-violating content
+• inconsistent response quality
+
+Most organizations lack systematic frameworks to evaluate LLM outputs before deployment.</p>
+    <p>Solution: The AI Governance Evaluator introduces an evaluation pipeline that scores LLM outputs across multiple governance dimensions.
+
+Each response is evaluated against custom scoring criteria designed to measure quality, safety, and alignment with organizational policies.</p>
+    <p>Technical Design: Evaluation dimensions
+
+Relevance
+
+Factual accuracy
+
+Coherence
+
+Completeness
+
+Safety
+
+Bias detection
+
+Clarity
+
+Helpfulness
+
+Instruction adherence
+
+Tone appropriateness
+
+Evaluation architecture
+
+LLM response generation
+
+Automated scoring engine
+
+Normalized scoring pipeline
+
+Evaluation dashboards
+
+Governance framework alignment
+
+NIST AI RMF principles
+
+Responsible AI evaluation pipelines
+
+Human-in-the-loop validation</p>
+    <p>Key Capabilities Demonstrated: Automated LLM evaluation pipelines
+
+Custom governance scoring frameworks
+
+Bias and safety detection
+
+Operational AI governance architecture</p>
+    <p>Outcome: he system demonstrates how organizations can operationalize responsible AI practices by embedding evaluation pipelines directly into AI development workflows.
+
+The framework shows how governance can evolve from policy documentation to automated enforcement and monitoring.</p>
   </template>
 
-  <template id="case-parallax">
-    <h4>Parallax Test case study</h4>
-    <p>Problem: people over-trust or under-trust AI, especially when the system sounds confident.</p>
-    <p>Approach: test explanations, confidence styles, and anthropomorphic cues against decision accuracy and trust calibration.</p>
-    <p>Outcome: practical guidance for safer UX patterns and better human oversight.</p>
+  <template id="case-semantic">
+    <h4>-semantic MDM case study: Cross-Domain Knowledge Alignment</h4>
+    <p>Overview:Semantic MDM is a demonstration showing how vector databases and semantic reasoning can align terminology across multiple departments. The platform illustrates how organizations can break down data silos by mapping different vocabularies to shared conceptual meaning.</p>
+    <p>Problem: Large organizations often use different terminology across departments.
+
+Examples include:
+
+Legal definitions
+
+Financial terminology
+
+Operational language
+
+Product terminology
+
+These inconsistencies make it difficult to perform enterprise-wide analytics and knowledge discovery.</p>
+    <p>Solution: The Semantic MDM platform introduces a semantic alignment layer that connects related concepts across domains using vector embeddings and conceptual similarity.
+
+The system enables departments to maintain their own terminology while still participating in a shared knowledge ecosystem.</p>
+    <p>Technical Design: Vector embedding engine
+
+Transforms terms and definitions into vector space
+
+Identifies semantic similarity across domains
+
+Clusters related concepts
+
+Concept alignment layer
+
+Maps departmental terminology
+
+Creates shared conceptual references
+
+Enables cross-domain query translation
+
+Knowledge graph integration
+
+Concept relationships stored in graph structure
+
+Supports semantic search and reasoning
+
+Provides explainable concept connections</p>
+    <p>Key Capabilities Demonstrated: Semantic alignment across departments
+
+Vector-based concept discovery
+
+Knowledge graph construction
+
+Cross-domain data interoperability</p>
+    <p>Outcome: Semantic MDM demonstrates how organizations can bridge departmental language differences and enable enterprise-wide data interoperability.
+
+The platform shows how semantic AI can improve collaboration and analytics across traditionally siloed teams.</p>
   </template>
 
   <script>
