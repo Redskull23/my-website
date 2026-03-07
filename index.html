@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andrew Pepper | Portfolio</title>
-  <meta
-    name="description"
-    content="Andrew Pepper portfolio featuring AI governance, data platforms, product leadership, demos, and case studies."
-  />
-  <style>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Andrew Pepper | Portfolio</title>
+
+<meta
+name="description"
+content="Andrew Pepper portfolio featuring AI governance, data platforms, product leadership, demos, and case studies."
+/>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="83fd3497-ba6e-4425-a00c-24323391dfca"></script>
+
+<style>
     :root {
       --bg: #0b1220;
       --panel: #101a2d;
@@ -500,13 +506,14 @@
     <a class="small" href="https://github.com/Redskull23/ai-governance-scorecard" target="_blank" rel="noopener">Repo</a>
     <button type="button" class="small case" data-open="ai-gov-score-case">Case study</button>
     <a
-      class="small demo"
-      href="https://ai-governance-evaluator.streamlit.app"
-      target="_blank"
-      rel="noopener"
-    >
-      Live demo
-    </a>
+  class="small demo"
+  href="https://ai-governance-evaluator.streamlit.app"
+  target="_blank"
+  rel="noopener"
+  onclick="umami.track('AI Governance Scorecard Demo Viewed')"
+>
+  Live demo
+</a>
   </div>
 </article>
 
@@ -529,6 +536,7 @@
     href="https://greenline-demo.streamlit.app"
     target="_blank"
     rel="noopener"
+    onclick="umami.track('Greenline Demo Viewed')"
   >
     Live demo
   </a>
@@ -552,16 +560,24 @@
     <a class="small"
        href="https://github.com/Redskull23/supply-chain-digital-enablement-demo"
        target="_blank"
-       rel="noopener">Repo</a>
+       rel="noopener"
+       onclick="umami.track('Supply Chain Repo Viewed')">
+      Repo
+    </a>
 
     <button type="button"
             class="small case"
-            data-open="case-supply-chain-demo">Case study</button>
+            data-open="case-supply-chain-demo">
+      Case study
+    </button>
 
     <a class="small demo"
        href="https://supply-chain-digital-enablement-demo.streamlit.app"
        target="_blank"
-       rel="noopener">Live demo</a>
+       rel="noopener"
+       onclick="umami.track('Supply Chain Demo Viewed')">
+      Live demo
+    </a>
   </div>
 </article>
           <article class="card" data-tags="data-platform demo taxonomy concept-model lcm">
@@ -640,9 +656,29 @@
           Hosted demos will be added here as they are published.
         </p>
 <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-  <a class="small demo" href="https://greenline-demo.streamlit.app" target="_blank" rel="noopener">Greenline live demo</a>
-  <a class="small demo" href="https://ai-governance-evaluator.streamlit.app" target="_blank" rel="noopener">AI Governance Scorecard demo</a>
-  <a class="small demo" href="https://supply-chain-digital-enablement-demo.streamlit.app" target="_blank" rel="noopener">Supply Chain Digital Enablement Demo</a>
+  <a class="small demo"
+   href="https://greenline-demo.streamlit.app"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('Greenline Demo Viewed')">
+  Greenline live demo
+</a>
+
+<a class="small demo"
+   href="https://ai-governance-evaluator.streamlit.app"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('AI Governance Scorecard Demo Viewed')">
+  AI Governance Scorecard demo
+</a>
+
+<a class="small demo"
+   href="https://supply-chain-digital-enablement-demo.streamlit.app"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('Supply Chain Demo Viewed')">
+  Supply Chain Digital Enablement Demo
+</a>
 </div>
 
         <div class="note">
@@ -658,7 +694,13 @@
         <p style="margin: 0 0 10px; color: var(--muted); font-size: 13px;">
           Click below to open the current resume PDF.
         </p>
-        <a class="btn primary" href="Andrew_Pepper_Resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
+        <a class="btn primary"
+   href="Andrew_Pepper_Resume.pdf"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('Resume Downloaded')">
+  Download resume (PDF)
+</a>
       </div>
     </section>
 
@@ -673,7 +715,13 @@
         </p>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
           <a class="small" href="mailto:pepper_andrew@yahoo.com">pepper_andrew@yahoo.com</a>
-          <a class="small" href="https://www.linkedin.com/in/andrewpepper1" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="small"
+   href="https://www.linkedin.com/in/andrewpepper1"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('LinkedIn Clicked')">
+  LinkedIn
+</a>
           <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
