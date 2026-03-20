@@ -453,9 +453,10 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
       <div>
         <h2 id="hero-title">Portfolio for hiring managers</h2>
         <p>
-          I build systems that make AI safer, explainable, and operational at scale.
-          This page highlights shipped work, case studies, and interactive demos.
-        </p>
+  I design and build AI governance systems that control how decisions are made,
+  validated, and executed in real-world environments. This portfolio highlights
+  production-style prototypes, decision engines, and interactive demos.
+</p>
         <div class="pillrow">
           <span class="pill">AI governance</span>
           <span class="pill">LLM evaluation</span>
@@ -491,7 +492,44 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
 
         <div class="grid" id="cards" style="margin-top: 14px;">
 <article class="card" data-tags="ai-governance data-platform demo compliance assurance sandbox">
-  <h4>Artificial Intelligence Governance Scorecard</h4>
+  <article class="card" data-tags="ai-governance data-platform demo banking decision-engine compliance">
+  <h4>MandateCore (AI Decision Governance Engine)</h4>
+  <p>
+    A real-time AI governance engine that evaluates whether AI-influenced
+    decisions should execute based on policy rules, authority levels,
+    and required evidence with full audit traceability.
+  </p>
+
+  <div class="tags">
+    <span class="tag">ai-governance</span>
+    <span class="tag">decision-engine</span>
+    <span class="tag">banking</span>
+    <span class="tag">demo</span>
+  </div>
+
+  <div class="actions">
+    <a class="small"
+       href="https://github.com/Redskull23/mandatecore"
+       target="_blank"
+       rel="noopener">
+      Repo
+    </a>
+
+    <button type="button"
+            class="small case"
+            data-open="case-mandatecore">
+      Case study
+    </button>
+
+    <a class="small demo"
+       href="https://mandatecore-e8yv6sgtfusjg8kpe4exyr.streamlit.app"
+       target="_blank"
+       rel="noopener"
+       onclick="umami.track('MandateCore Demo Viewed')">
+      Live demo
+    </a>
+  </div>
+</article><h4>Artificial Intelligence Governance Scorecard</h4>
   <p>
     A lightweight AI governance diagnostic and maturity assessment tool designed
     to evaluate how prepared an organization is to responsibly deploy, manage,
@@ -656,7 +694,14 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
           Hosted demos will be added here as they are published.
         </p>
 <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-  <a class="small demo"
+<a class="small demo"
+   href="https://mandatecore-e8yv6sgtfusjg8kpe4exyr.streamlit.app"
+   target="_blank"
+   rel="noopener"
+   onclick="umami.track('MandateCore Demo Viewed')">
+  MandateCore live demo
+</a>  
+<a class="small demo"
    href="https://greenline-demo.streamlit.app"
    target="_blank"
    rel="noopener"
@@ -749,7 +794,60 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
     </div>
   </div>
 
-  <template id="ai-gov-score-case">
+  <template id="case-mandatecore">
+  <h4>MandateCore: Real-Time AI Decision Governance</h4>
+
+  <p><b>Overview:</b></p>
+  <p>
+    MandateCore is a real-time governance engine designed to control how AI-driven
+    decisions are executed in regulated environments such as banking and finance.
+  </p>
+
+  <p><b>Problem:</b></p>
+  <p>
+    AI systems can generate decisions in seconds, but governance processes
+    remain manual, fragmented, and slow. This creates risk when high-impact
+    decisions (payments, approvals, fraud actions) are executed without
+    structured validation against policy and authority.
+  </p>
+
+  <p><b>Solution:</b></p>
+  <p>
+    MandateCore introduces a runtime decision validation layer that evaluates
+    each AI-influenced action against policy rules, authority thresholds,
+    and required evidence before execution.
+  </p>
+
+  <p><b>Decision Model:</b></p>
+  <p>
+    Each decision is evaluated and returns one of three outcomes:
+    <br>ALLOW – decision meets all conditions
+    <br>ESCALATE – requires human review
+    <br>REFUSE – violates policy or lacks required evidence
+  </p>
+
+  <p><b>Technical Design:</b></p>
+  <p>
+    Built using Python and Streamlit with a modular architecture that separates
+    policy definitions (YAML), evaluation logic, authority validation,
+    and audit logging. The system simulates real-world decision scenarios
+    including payments, fraud detection, and approvals.
+  </p>
+
+  <p><b>Key Capabilities Demonstrated:</b></p>
+  <p>
+    Real-time AI governance, decision validation engines, policy-as-code,
+    authority-based controls, explainable outputs, and audit traceability.
+  </p>
+
+  <p><b>Outcome:</b></p>
+  <p>
+    MandateCore demonstrates how organizations can shift from after-the-fact
+    governance to real-time control of AI-driven decisions, reducing risk while
+    enabling faster, safer automation.
+  </p>
+</template>
+    <template id="ai-gov-score-case">
     <h4>AI Governance Scorecard</h4>
     <p><b>Problem:</b></p>
     <p>
