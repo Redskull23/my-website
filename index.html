@@ -580,12 +580,27 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
   </div>
 
   <div class="actions">
-    <a class="small"
-       href="#demos"
-       onclick="umami.track('ATLAS Viewed From Gallery')">
-      View demo
-    </a>
-  </div>
+ <div class="actions">
+  <a class="small"
+     href="#demos"
+     onclick="umami.track('ATLAS Viewed From Gallery')">
+    View demo
+  </a>
+
+  <button type="button"
+          class="small case"
+          data-open="case-atlas">
+    Case study
+  </button>
+
+  <a class="small demo"
+     href="https://apex-ai-governance-ohhvmaom6mal9jbp6bicms.streamlit.app"
+     target="_blank"
+     rel="noopener"
+     onclick="umami.track('ATLAS Demo Viewed')">
+    Live demo
+  </a>
+</div>
 </article>
             
 <article class="card" data-tags="ai-governance data-platform demo banking decision-engine compliance">
@@ -925,6 +940,65 @@ content="Andrew Pepper portfolio featuring AI governance, data platforms, produc
     </div>
   </div>
 
+  <template id="case-atlas">
+  <h4>ATLAS AI Risk Agent: Operational AI Threat Assessment</h4>
+
+  <p><b>Overview:</b></p>
+  <p>
+    The ATLAS AI Risk Agent is a governance system designed to translate adversarial AI
+    techniques into measurable risk, enforceable controls, and auditable decision-making.
+    It aligns with MITRE ATLAS for threat modeling and the NIST AI Risk Management Framework
+    for control mapping.
+  </p>
+
+  <p><b>Problem:</b></p>
+  <p>
+    AI governance frameworks define risks such as prompt injection, data leakage,
+    and model manipulation, but they are rarely embedded into systems. This creates
+    a gap between policy and execution, leaving organizations reactive instead of proactive.
+  </p>
+
+  <p><b>Solution:</b></p>
+  <p>
+    The ATLAS AI Risk Agent operationalizes governance by evaluating threats in real time.
+    It scores risk based on likelihood, impact, and detection difficulty, then maps each
+    risk to enforceable controls and mitigation strategies.
+  </p>
+
+  <p><b>Advanced System Design (Beyond Demo):</b></p>
+  <p>
+    The current demo represents a simplified interface for interaction and visualization.
+    The full system design is more robust and includes agent-based orchestration,
+    LLM-as-a-judge evaluation, and dynamic reasoning workflows.
+  </p>
+
+  <p>
+    In the full architecture:
+    <br>• AI agents perform structured threat analysis and scenario evaluation
+    <br>• LLMs act as evaluators ("judge systems") to score and reason about risk
+    <br>• Outputs are cross-validated through human-in-the-loop (HIL) review
+  </p>
+
+  <p>
+    The final determination of risk is not static—it is produced through a combination of:
+    automated reasoning, model-based evaluation, and human validation.
+  </p>
+
+  <p><b>Key Capabilities Demonstrated:</b></p>
+  <p>
+    Threat modeling using MITRE ATLAS, quantitative risk scoring, AI-assisted evaluation,
+    control mapping to NIST AI RMF, human-in-the-loop validation, and explainable
+    governance workflows.
+  </p>
+
+  <p><b>Outcome:</b></p>
+  <p>
+    The ATLAS AI Risk Agent demonstrates how AI governance can shift from static policy
+    frameworks into executable systems that continuously evaluate, score, and validate
+    risk in real-world environments.
+  </p>
+</template>  
+    
   <template id="case-mandatecore">
   <h4>MandateCore: Real-Time AI Decision Governance</h4>
 
