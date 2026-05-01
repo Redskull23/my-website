@@ -999,6 +999,86 @@ and human validation can be connected into an operational AI governance workflow
     and validate risk in real-world environments.
   </p>
 </template>
+
+   <template id="architecture-atlas">
+  <h4>ATLAS AI Risk Agent: System Architecture</h4>
+
+  <p><b>Purpose:</b></p>
+  <p>
+    This architecture view shows the intended system design behind the ATLAS AI Risk Agent.
+    The live demo is a simplified portfolio prototype, while the broader design demonstrates
+    how agents, LLM-as-a-judge evaluation, human validation, and control mapping could work
+    together in an operational AI governance workflow.
+  </p>
+
+  <p><b>Architecture Flow:</b></p>
+
+  <p>
+    1. <b>Input Scenario</b> — A user submits an AI system, use case, prompt pattern,
+    model behavior, data context, or threat scenario.
+  </p>
+
+  <p>
+    2. <b>Threat Mapping Agent</b> — The system maps the scenario to relevant MITRE ATLAS
+    techniques such as prompt injection, data exfiltration, evasion, model manipulation,
+    or sensitive data leakage.
+  </p>
+
+  <p>
+    3. <b>Risk Scoring Agent</b> — The system evaluates likelihood, impact, and detection
+    difficulty to generate a risk score and risk band.
+  </p>
+
+  <p>
+    4. <b>LLM-as-a-Judge Layer</b> — One or more evaluator models review the scenario,
+    mapped threats, supporting evidence, and proposed score. The judge layer provides
+    rationale, challenge signals, and confidence indicators.
+  </p>
+
+  <p>
+    5. <b>Control Mapping Layer</b> — Risks are mapped to governance and technical controls
+    aligned to NIST AI RMF categories, including monitoring, access control, output filtering,
+    logging, escalation, and policy enforcement.
+  </p>
+
+  <p>
+    6. <b>Human-in-the-Loop Validation</b> — Human reviewers validate, override, approve,
+    or escalate the system recommendation. HIL acts as a validation and accountability layer,
+    not the only decision engine.
+  </p>
+
+  <p>
+    7. <b>Audit Record</b> — The final output captures the scenario, mapped threats, scores,
+    rationale, controls, human validation decision, and traceable evidence.
+  </p>
+
+  <p><b>Conceptual Architecture:</b></p>
+
+  <pre style="white-space: pre-wrap; color: #e6edf3; background: #0b1220; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; font-size: 12px; line-height: 1.5;">
+Input Scenario
+      ↓
+Threat Mapping Agent
+      ↓
+MITRE ATLAS Technique Mapping
+      ↓
+Risk Scoring Agent
+      ↓
+LLM-as-a-Judge Evaluation
+      ↓
+Control Mapping to NIST AI RMF
+      ↓
+Human-in-the-Loop Validation
+      ↓
+Auditable Risk Decision
+  </pre>
+
+  <p><b>Portfolio Signal:</b></p>
+  <p>
+    This system architecture is included to demonstrate applied product thinking,
+    AI governance design, risk modeling, workflow architecture, and the ability to
+    translate governance frameworks into executable system concepts.
+  </p>
+</template> 
     
   <template id="case-mandatecore">
   <h4>MandateCore: Real-Time AI Decision Governance</h4>
