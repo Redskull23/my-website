@@ -875,46 +875,63 @@ and human validation can be connected into an operational AI governance workflow
 </section>
 
 
-    <section id="resume">
-      <div class="sectionTitle">
+<section id="resume">
+    <div class="sectionTitle">
         <h3>Resume</h3>
-      </div>
-      <div class="panel">
-        <p style="margin: 0 0 10px; color: var(--muted); font-size: 13px;">
-          Click below to open the current resume PDF.
-        </p>
-        <a class="btn primary"
-   href="Andrew_Pepper_Resume.pdf"
-   target="_blank"
-   rel="noopener"
-   onclick="umami.track('Resume Downloaded')">
-  Download resume (PDF)
-</a>
-      </div>
-    </section>
+    </div>
 
-    <section id="contact">
-      <div class="sectionTitle">
+    <div class="panel">
+        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
+            Download my current resume and professional experience summary.
+        </p>
+
+        <a class="btn primary"
+           href="Andrew_Pepper_Resume.pdf"
+           target="_blank"
+           onclick="umami.track('resume_download')">
+           Download Resume
+        </a>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="sectionTitle">
         <h3>Contact</h3>
         <div class="hint">Fast ways to reach me</div>
-      </div>
-      <div class="panel">
-        <p style="margin: 0 0 10px; color: var(--muted); font-size: 13px;">
-          Recruiters and hiring managers: email is best. LinkedIn also works.
+    </div>
+
+    <div class="panel">
+        <p style="margin:0 0 10px;color:var(--muted);font-size:13px;">
+            Recruiters, hiring managers, and business partners: email is the fastest way to reach me. LinkedIn messages are also monitored regularly.
         </p>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a class="small" href="mailto:pepper_andrew@yahoo.com">pepper_andrew@yahoo.com</a>
-          <a class="small"
-   href="https://www.linkedin.com/in/andrewpepper1"
-   target="_blank"
-   rel="noopener"
-   onclick="umami.track('LinkedIn Clicked')">
-  LinkedIn
-</a>
-          <a class="small" href="https://github.com/Redskull23" target="_blank" rel="noopener">GitHub</a>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+            <a class="small"
+               href="mailto:pepper_andrew@yahoo.com"
+               onclick="umami.track('email_click')">
+               pepper_andrew@yahoo.com
+            </a>
+
+            <a class="small"
+               href="https://www.linkedin.com/in/andrewpepper1"
+               target="_blank"
+               rel="noopener"
+               onclick="umami.track('linkedin_click')">
+               LinkedIn
+            </a>
+
+            <a class="small"
+               href="https://github.com/Redskull23"
+               target="_blank"
+               rel="noopener"
+               onclick="umami.track('github_click')">
+               GitHub
+            </a>
+
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
     <footer>
       <div>© <span id="year"></span> Andrew Pepper</div>
@@ -1478,5 +1495,54 @@ clarity, responsiveness, and coordination across supply chain activities.
 
     applyFilters();
   </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Contact section viewed
+    const contactSection = document.querySelector("#contact");
+
+    if (contactSection) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    umami.track("contact_section_view");
+                    observer.disconnect();
+                }
+            });
+        });
+
+        observer.observe(contactSection);
+    }
+
+    // Scroll depth
+    let tracked50 = false;
+    let tracked90 = false;
+
+    window.addEventListener("scroll", () => {
+        const scrollPercent =
+            ((window.scrollY + window.innerHeight) /
+             document.documentElement.scrollHeight) * 100;
+
+        if (scrollPercent >= 50 && !tracked50) {
+            tracked50 = true;
+            umami.track("scroll_50");
+        }
+
+        if (scrollPercent >= 90 && !tracked90) {
+            tracked90 = true;
+            umami.track("scroll_90");
+        }
+    });
+
+    // Engagement timers
+    setTimeout(() => {
+        umami.track("engaged_30_seconds");
+    }, 30000);
+
+    setTimeout(() => {
+        umami.track("engaged_60_seconds");
+    }, 60000);
+});
+</script>
 </body>
 </html>
